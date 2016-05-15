@@ -76,6 +76,9 @@ class Note
         foreach ($infos as $info) {
             $notes[] = new Note($info);
         }
+        usort($notes, function($a, $b) {
+            return $a->carbon < $b->carbon;
+        });
         return $notes;
     }
 }

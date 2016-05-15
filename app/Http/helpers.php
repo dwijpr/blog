@@ -1,5 +1,59 @@
 <?php
 
+if (!function_exists('x')) {
+    function x($pattern, $count = 80) {
+        $return = '';
+        while ($count > 0) {
+            $return .= $pattern;
+            $count--;
+        }
+        return $return;
+    }
+}
+
+if (!function_exists('to_ascii')) {
+    function to_ascii($str, $replace=array(), $delimiter='-') {
+        if( !empty($replace) ) {
+            $str = str_replace((array)$replace, ' ', $str);
+        }
+        $clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+        $clean = preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', $clean);
+        $clean = strtolower(trim($clean, '-'));
+        $clean = preg_replace("/[\/_|+ -]+/", $delimiter, $clean);
+        return $clean;
+    }
+}
+
+if (!function_exists('to_path')) {
+    function to_path($segments, $absolute = true) {
+        $segments = array_filter($segments, function($value) {
+            return $value;
+        });
+        return ($absolute?"/":"").implode('/', $segments);
+    }
+}
+
+if (!function_exists('to_segments')) {
+    function to_segments($path) {
+        $segments = explode('/', $path);
+        return array_filter($segments, function($value) {
+            return $value;
+        });
+    }
+}
+
+if (!function_exists('replace_ext')) {
+    function replace_ext($value, $ext) {
+        return preg_replace('/\..+$/', '.'.$ext, $value);
+    }
+}
+
+if (!function_exists('strip_ext')) {
+    function strip_ext($value) {
+        return preg_replace('/\\.[^.\\s]{2,4}$/', '', $value);
+    }
+}
+
 if (!function_exists('bool_val')) {
     function bool_val($bool) {
         $text = $bool?'true':'false';

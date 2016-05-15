@@ -11,11 +11,21 @@
     {!! Html::style('thirdparty/font-awesome/4.6.1/css/font-awesome.css') !!}
     {!! Html::style('thirdparty/bootstrap/3.3.6/css/bootstrap.css') !!}
     {!! Html::style('thirdparty/jquery-jsonview/1.2.3/dist/jquery.jsonview.css') !!}
+    {!! Html::style('thirdparty/jquery-ui/1.11.4/jquery-ui.css') !!}
+    {!! Html::style('thirdparty/jquery-ui/1.11.4/jquery-ui.theme.css') !!}
+    {!! Html::style('thirdparty/jQuery-Timepicker-Addon/1.6.3/dist/jquery-ui-timepicker-addon.css') !!}
 
     <style>
         body {
             font-family: 'LatoWeb';
             padding-top: 70px;
+        }
+
+        h1, h2, h3, h4, h5, h6, b, strong{
+            font-family: 'LatoWebBold';
+        }
+        i, em{
+            font-family: 'LatoWebLight';
         }
 
         .fa-btn {
@@ -42,6 +52,8 @@
     {!! Html::script('thirdparty/js/jquery-1.12.3.js') !!}
     {!! Html::script('thirdparty/bootstrap/3.3.6/js/bootstrap.js') !!}
     {!! Html::script('thirdparty/jquery-jsonview/1.2.3/dist/jquery.jsonview.js') !!}
+    {!! Html::script('thirdparty/jquery-ui/1.11.4/jquery-ui.js') !!}
+    {!! Html::script('thirdparty/jQuery-Timepicker-Addon/1.6.3/dist/jquery-ui-timepicker-addon.js') !!}
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -110,6 +122,10 @@
                 $el.JSONView($el.data('json'), {
                     collapsed: true
                 });
+            });
+            $(".datepicker").datepicker();
+            $(".datetimepicker").datetimepicker({
+                timeFormat: "HH:mm:ss",
             });
         });
     </script>

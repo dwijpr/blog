@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
         "barryvdh/laravel-debugbar": "^2.2",
-        "donatj/phpuseragentparser": "*"
+        "donatj/phpuseragentparser": "*",
+        "erusev/parsedown": "^1.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -26,7 +27,8 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Http/helpers.php"
+            "app/Http/helpers.php",
+            "vendor/erusev/parsedown/Parsedown.php"
         ]
     },
     "autoload-dev": {

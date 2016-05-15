@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'Sub App',
+    'name' => 'Catatan',
 
     'root' => [
         'path' => '/home/dwi/workspace/www/user/storage/'

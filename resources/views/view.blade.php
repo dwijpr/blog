@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+
+@section('styles')
+
+    <style>
+        code, kbd, pre, samp {
+            font-family: monospace;
+            font-size: .815em;
+        }
+    </style>
+
+@endsection
+
 @section('content')
 
     <div class="container">

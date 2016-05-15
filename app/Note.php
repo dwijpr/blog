@@ -29,9 +29,11 @@ class Note
     }
 
     public function getContent() {
-        return (new Parsedown)->text(
-            File::get(replace_ext($this->info->getPathname(), 'md'))
-        );
+        view()->addLocation(base_path('resources/notes/'));
+        view()->addNamespace('note', base_path('resources/notes/'));
+        view()->addExtension('md', 'blade');
+        $view = view('note::'.$this->param)->render();
+        return (new Parsedown)->text($view);
     }
 
     public function delete() {

@@ -15,6 +15,12 @@
                     <td>
                         <div class="btn-group">
                             <a
+                                href="{{ url($o->param) }}"
+                                class="btn btn-default"
+                            >
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a
                                 href="javascript:"
                                 class="btn btn-default note-delete"
                                 data-id="{{ $o->param }}"

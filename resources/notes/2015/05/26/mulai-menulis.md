@@ -1,33 +1,38 @@
 Mulai Menulis
 =============
 
-Akhir-akhir ini saya memiliki keinginan yang sangat besar untuk menulis. Namun
-pada saat saya memulai untuk membuat beberapa artikel, tak satupun dari
-tulisan tersebut yang menurut saya cukup bagus dan layak untuk dibaca orang
-lain. Seperti kehilangan akal dan tidak tahu cara yang baik untuk menulis.
+Hai, perkenalkan, nama saya Dwi, nama lengkap Dwi Juli Prabowo, saya rasa
+cukup mudah untuk menginterpretasikan maksud dari nama tersebut ...
 
-Hal ini sangat aneh kalau mengingat bahwa saya sudah belajar untuk menulis
-dari awal. Sejak kecil saya sudah dikenalkan tentang kegiatan menulis ini.
-Namun memang kegiatan ini biasa saya lakukan hanya ketika berada di sekolah
-saja. Seperti menganggap remeh pada kegiatan ini. Hingga akhirnya sampai saat
-ini, ketika saya ingin mencurahkan pikiran saya pada sebuah karya tulis tak
-sebuah tulisan pun yang bisa memuaskan hasrat saya.
+> Apalah arti sebuah nama
+<footer>William Shakespeare</footer>
 
-Setelah beberapa kali mengalami depresi gara-gara membuat karya tulis,
-akhirnya saya memutuskan untuk membuat sebuah media yang saya gunakan untuk
-menampung pikiran-pikiran saya dalam bentuk tulisan. Ya, mulai sekarang *blog*
-ini saya gunakan untuk hal tersebut. Dengan harapan media ini dapat membantu
-saya dalam berlatih untuk menghasilkan karya tulis yang baik.
+Berasal dari sebuah kota di pulau Jawa bagian tengah yang terkenal dengan
+candi Borobudur-nya. Seorang lelaki <sup>1</sup>/<sub>4</sub>
+abad yang sedang mencoba _secara paksa_ hobi baru.
 
-Berbicara tentang menulis, sebenarnya kegiatan saya sehari-hari juga menulis
-tapi tidak menggunakan bahasa yang biasa digunakan untuk berbincang-bincang
-seperti bahasa indonesia, bahasa inggris dan bahasa lainnya. Bahasa yang saya
-gunakan adalah bahasa untuk membuat program pada komputer. Bahasa tersebut
-biasa dikenal dengan istilah bahasa pemrograman, bahasa yang digunakan untuk
-berinteraksi dengan komputer.
+Beberapa tahun ini saya sudah memiliki keinginan untuk membuat sebuah karya
+dengan cara menulis seperti membuat artikel untuk _blog_ atau membuat buku
+dengan tujuan tidak lain adalah mendapat penghasilan dari karya tersebut. Namun
+keinginan tinggal keinginan, membuat artikel, buku atau karya tulisan apapun,
+hingga kini masih menjadi sebuah angan-angan.
 
-Dengan berbekal pengetahuan saya tentang dunia pemrograman komputer yang telah
-saya tekuni beberapa tahun belakangan ini, dan mungkin beberapa hal lainnya,
-saya berharap dapat membagikan pengalaman saya melalui *blog* ini sehingga
-mungkin dapat bermanfaat bagi pembaca, dan khususnya untuk saya sendiri, untuk
-dapat menghasilkan karya yang lebih baik kedepannya.
+Menulis, sebuah _skill_ yang terdengar _simple_, namun nyatanya membuat sebuah
+karya dari keahlian tersebut sangatlah sulit, khususnya untuk saya. Membuat
+beberapa artikel untuk blog, dan kemudian menghapusnya kembali karena tidak
+yakin apakah tulisan tersebut layak baca. Tidak ada jejak dari tulisan-tulisan
+sebelumnya, hingga akhirnya memutuskan untuk menyusun tulisan dengan judul
+[Mulai Menulis](./mulai-menulis) ini.
+
+Membuat _blog_ seperti menjadi sebuah hobi, mendesain tampilan, mengatur konten
+yang ada seperti _layout_, judul, kategori. Mencoba berbagai _platform_ mulai
+dari *blogspot*, *wordpress*, *jekyll*, hingga membuat program untuk membuat
+_blog_ sendiri masih tidak bisa membantu menciptakan karya yang bagus. Karena
+inti dari sebuah _blog_ adalah isinya itu sendiri yang berupa tulisan. Beberapa
+blog dihapus yang lainnya terbengkalai tanpa lanjutan.
+
+Dari sini saya berharap rangkaian tulisan ini dapat terus berlanjut. Mungkin
+saya akan membuat tulisan yang tidak bertema atau hanya tulisan tentang
+kegiatan sehari-hari. Semoga tulisan saya dapat bermanfaat bagi
+pembaca, khususnya untuk saya sendiri, dan mampu menghasilkan karya yang lebih 
+baik lagi.

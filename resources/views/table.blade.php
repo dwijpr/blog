@@ -21,6 +21,12 @@
                                 <i class="fa fa-eye"></i>
                             </a>
                             <a
+                                href="{{ url('backend/'.$o->param) }}"
+                                class="btn btn-default"
+                            >
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a
                                 href="javascript:"
                                 class="btn btn-default note-delete"
                                 data-id="{{ $o->param }}"

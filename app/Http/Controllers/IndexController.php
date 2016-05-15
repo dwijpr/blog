@@ -19,7 +19,11 @@ class IndexController extends Controller
         return view('view', ['object' => $object]);
     }
 
-    public function backend() {
+    public function backend($key = false) {
+        if ($key) {
+            $object = Note::get($key);
+            view()->share('object', $object);
+        }
         $objects = Note::all();
         return view('backend', ['objects' => $objects]);
     }
@@ -29,9 +33,19 @@ class IndexController extends Controller
         return redirect('backend');
     }
 
+    public function update() {
+        $key = request()->input('key');
+        $format = 'Y-m-d H:i:s';
+        $this->validate(request(), [
+            'datetime' => 'required|date_format:'.$format,
+            'title' => 'required',
+        ]);
+        return redirect('backend');
+    }
+
     public function store() {
         extract(request()->all());
-        $format = 'm/d/Y H:i:s';
+        $format = 'Y-m-d H:i:s';
         $this->validate(request(), [
             'datetime' => 'required|date_format:'.$format,
             'title' => 'required',
@@ -39,18 +53,7 @@ class IndexController extends Controller
         $datetime = DateTime::createFromFormat(
             $format, $datetime
         );
-        $path = base_path('resources/notes');
-        $path .= '/'.$datetime->format('Y/m/d');
-        File::makeDirectory($path, 0755, true, true);
-        $path .= '/'.to_ascii($title);
-        File::put($path.'.json', json_encode([
-            'title' => $title,
-            'time' => $datetime->format('H:i:s'),
-        ], JSON_PRETTY_PRINT));
-        File::put($path.'.md', view('template', [
-            'title' => $title,
-            'separator' => x('=', strlen($title)),
-        ])->render());
+        Note::create($datetime, $title);
         return redirect('backend');
     }
 }

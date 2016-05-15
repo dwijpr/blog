@@ -1,18 +1,24 @@
 <div class="well">
     <h3 class="text-center">
-        New Note
+        {{ @$object?'Edit':'New' }}
+        Note
     </h3>
     <hr>
     {!! Form::open([
-        'url' => 'store',
-        'method' => 'post',
+        'url' => @$object?'update':'store',
+        'method' => @$object?'patch':'post',
         'class' => 'form-horizontal',
         'role' => 'form',
     ]) !!}
+        @if(@$object)
+            {!! Form::hidden('title', $object->param) !!}
+        @endif
         <div class="form-group{{ $errors->has('datetime') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">DateTime</label>
             <div class="col-md-6">
-                {!! Form::text('datetime', date('m/d/Y H:i:s'), [
+                {!! Form::text(
+                    'datetime'
+                    , @$object?$object->getDateTime():date('Y-m-d H:i:s'), [
                     'class' => 'form-control datetimepicker',
                     'readonly' => true,
                 ]) !!}
@@ -27,7 +33,7 @@
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">Title</label>
             <div class="col-md-6">
-                {!! Form::text('title', false, [
+                {!! Form::text('title', @$object?$object->getTitle():false, [
                     'class' => 'form-control',
                     'autofocus' => true,
                 ]) !!}

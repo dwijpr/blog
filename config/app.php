@@ -4,6 +4,8 @@ return [
 
     'name' => 'Catatan',
 
+    'notes_path' => 'resources/notes',
+
     'root' => [
         'path' => '/home/dwi/workspace/www/user/storage/'
     ],

@@ -29,8 +29,8 @@ class Note
     }
 
     public function getContent() {
-        view()->addLocation(base_path('resources/notes/'));
-        view()->addNamespace('note', base_path('resources/notes/'));
+        view()->addLocation(base_path(config('app.notes_path')));
+        view()->addNamespace('note', base_path(config('app.notes_path')));
         view()->addExtension('md', 'blade');
         $view = view('note::'.$this->param)->render();
         return (new Parsedown)->text($view);
@@ -45,6 +45,21 @@ class Note
         }
     }
 
+    public static function create($datetime, $title) {
+        $path = base_path(config('app.notes_path'));
+        $path .= '/'.$datetime->format('Y/m/d');
+        File::makeDirectory($path, 0755, true, true);
+        $path .= '/'.to_ascii($title);
+        File::put($path.'.json', json_encode([
+            'title' => $title,
+            'time' => $datetime->format('H:i:s'),
+        ], JSON_PRETTY_PRINT));
+        File::put($path.'.md', view('template', [
+            'title' => $title,
+            'separator' => x('=', strlen($title)),
+        ])->render());
+    }
+
     public static function get($key) {
         return head(Note::fetch($key));
     }
@@ -55,7 +70,7 @@ class Note
 
     private static function fetch($key = false) {
         $notes = [];
-        $path = base_path('resources/notes');
+        $path = base_path(config('app.notes_path'));
         if ($key) {
             $keys = to_segments($key);
             $key = array_pop($keys);

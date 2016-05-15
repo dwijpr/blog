@@ -130,7 +130,7 @@
             });
             $(".datepicker").datepicker();
             $(".datetimepicker").datetimepicker({
-                dateFormat: "yyyy mm dd",
+                dateFormat: "yy-mm-dd",
                 timeFormat: "HH:mm:ss",
             });
         });

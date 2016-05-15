@@ -28,6 +28,13 @@ class Note
         return @$this->data->title;
     }
 
+    public function getMd() {
+        return File::get(
+            base_path(config('app.notes_path'))
+            .'/'.$this->param.'.md'
+        );
+    }
+
     public function getContent() {
         view()->addLocation(base_path(config('app.notes_path')));
         view()->addNamespace('note', base_path(config('app.notes_path')));
@@ -45,7 +52,10 @@ class Note
         }
     }
 
-    public static function create($datetime, $title) {
+    public static function create($datetime, $title, $key = false) {
+        if ($key) {
+            $note = Note::get($key);
+        }
         $path = base_path(config('app.notes_path'));
         $path .= '/'.$datetime->format('Y/m/d');
         File::makeDirectory($path, 0755, true, true);
@@ -54,10 +64,18 @@ class Note
             'title' => $title,
             'time' => $datetime->format('H:i:s'),
         ], JSON_PRETTY_PRINT));
-        File::put($path.'.md', view('template', [
+        $md = view('template', [
             'title' => $title,
             'separator' => x('=', strlen($title)),
-        ])->render());
+        ])->render();
+        if ($key) {
+            $md .= "\n".remove_line($note->getMd(), 2);
+        }
+        File::put($path.'.md', $md);
+        $newKey = $datetime->format('Y/m/d/').$title;
+        if ($key and $note->param !== $newKey) {
+            $note->delete();
+        }
     }
 
     public static function get($key) {

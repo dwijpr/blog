@@ -1,5 +1,11 @@
 <?php
 
+if (!function_exists('remove_line')) {
+    function remove_line($text, $count) {
+        return implode("\n", array_slice(explode("\n", $text), $count));
+    }
+}
+
 if (!function_exists('x')) {
     function x($pattern, $count = 80) {
         $return = '';

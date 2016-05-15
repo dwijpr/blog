@@ -9,6 +9,7 @@ use File, DateTime;
 
 class IndexController extends Controller
 {
+    private $datetimeFormat = 'Y-m-d H:i:s';
     public function index() {
         $objects = Note::all();
         return view('index', ['objects' => $objects]);
@@ -33,19 +34,9 @@ class IndexController extends Controller
         return redirect('backend');
     }
 
-    public function update() {
-        $key = request()->input('key');
-        $format = 'Y-m-d H:i:s';
-        $this->validate(request(), [
-            'datetime' => 'required|date_format:'.$format,
-            'title' => 'required',
-        ]);
-        return redirect('backend');
-    }
-
-    public function store() {
+    private function change() {
         extract(request()->all());
-        $format = 'Y-m-d H:i:s';
+        $format = $this->datetimeFormat;
         $this->validate(request(), [
             'datetime' => 'required|date_format:'.$format,
             'title' => 'required',
@@ -53,7 +44,16 @@ class IndexController extends Controller
         $datetime = DateTime::createFromFormat(
             $format, $datetime
         );
-        Note::create($datetime, $title);
+        return [
+            'title' => $title,
+            'datetime' => $datetime,
+            'key' => @$key,
+        ];
+    }
+
+    public function store() {
+        extract($this->change());
+        Note::create($datetime, $title, $key);
         return redirect('backend');
     }
 }

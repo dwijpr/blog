@@ -11,7 +11,7 @@
         'role' => 'form',
     ]) !!}
         @if(@$object)
-            {!! Form::hidden('title', $object->param) !!}
+            {!! Form::hidden('key', $object->param) !!}
         @endif
         <div class="form-group{{ $errors->has('datetime') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">DateTime</label>
@@ -48,7 +48,7 @@
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">
-                    Generate
+                    {{ @$object?'Update':'Generate' }}
                 </button>
             </div>
         </div>

@@ -26,7 +26,7 @@ class IndexController extends Controller
             }
         }
         if ($index !== false) {
-            $links['next'] = $index-1>0?$objects[$index-1]:false;
+            $links['next'] = $index>0?$objects[$index-1]:false;
             $links['prev'] = $index+1<count($objects)?$objects[$index+1]:false;
             view()->share('links', $links);
         }

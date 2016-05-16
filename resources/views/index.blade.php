@@ -4,8 +4,9 @@
 @section('styles')
 
     <style>
-        .note-list .btn {
-            margin: 4px;
+        .note-list a {
+            display: block;
+            margin: 6px 12px;
         }
 
         .search-title {
@@ -48,7 +49,7 @@
                         <li>
                             <a
                                 href="{{ url($o->param) }}"
-                                class="btn btn-default title"
+                                class="title"
                             >
                                 {{ $o->getTitle() }}
                             </a>

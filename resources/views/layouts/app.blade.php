@@ -54,6 +54,8 @@
     {!! Html::script('thirdparty/jquery-jsonview/1.2.3/dist/jquery.jsonview.js') !!}
     {!! Html::script('thirdparty/jquery-ui/1.11.4/jquery-ui.js') !!}
     {!! Html::script('thirdparty/jQuery-Timepicker-Addon/1.6.3/dist/jquery-ui-timepicker-addon.js') !!}
+    {!! Html::script('thirdparty/js/list.js') !!}
+    
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -135,5 +137,7 @@
             });
         });
     </script>
+
+    @yield ('scripts')
 </body>
 </html>

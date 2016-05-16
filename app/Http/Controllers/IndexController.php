@@ -17,6 +17,19 @@ class IndexController extends Controller
 
     public function view($key) {
         $object = Note::get($key);
+        $objects = Note::all();
+        $index = false;
+        foreach ($objects as $i => $o) {
+            if ($object->param === $o->param) {
+                $index = $i;
+                break;
+            }
+        }
+        if ($index !== false) {
+            $links['next'] = $index-1>0?$objects[$index-1]:false;
+            $links['prev'] = $index+1<count($objects)?$objects[$index+1]:false;
+            view()->share('links', $links);
+        }
         return view('view', ['object' => $object]);
     }
 

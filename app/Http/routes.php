@@ -13,13 +13,15 @@
 
 Route::auth();
 
+Route::get( '/_debugbar/assets/stylesheets', '\Barryvdh\Debugbar\Controllers\AssetController@css' );
+Route::get( '/_debugbar/assets/javascript', '\Barryvdh\Debugbar\Controllers\AssetController@js' );
+
 Route::get('/', 'IndexController@index');
 Route::get('/backend/{key?}', 'IndexController@backend')->where('key', '(.)*');
 Route::post('/store', 'IndexController@store');
 Route::patch('/update', 'IndexController@store');
 Route::delete('/delete', 'IndexController@destroy');
 Route::get('/{key}', 'IndexController@view')->where('key', '(.)*');
-
 
 $objects = [];
 

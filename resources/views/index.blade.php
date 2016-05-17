@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center note-list">
+            <div class="col-md-12 text-center note-list">
                 <ul class="list">
                     @foreach ($objects as $o)
                         <li>
@@ -51,7 +51,7 @@
                                 href="{{ url($o->param) }}"
                                 class="title"
                             >
-                                {{ $o->getTitle() }}
+                                <ins>{{ $o->getTitle() }}</ins>
                             </a>
                         </li>
                     @endforeach
